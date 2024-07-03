@@ -200,3 +200,59 @@ Object.getOwnPropertyNames(obj500);
 var obj1000 = {};
 Object.getPrototypeOf(obj1000);
 // {...}
+
+
+
+/*
+ * Obje koruma yöntemleri (Object Protection Methods)
+ * 
+ * Object.preventExtensions()
+ * Object.isExtensible()
+ * Object.seal()
+ * Object.isSealed()
+ * Object.freeze()
+ * Object.isFrozen()
+ * 
+ */
+
+//Object.preventExtensions(obj) verilen objeye özellik eklenmesini engeller
+var obj2000 = {};
+Object.preventExtensions(obj2000);
+//obj2000.variable = "1"; eklemez
+
+//Object.isExtensible(obj) verilen obje özellik eklenebilir durumdaysa true, değilse false
+var obj3000 = {};
+Object.isExtensible(obj3000); //true
+
+Object.preventExtensions(obj3000);
+Object.isExtensible(obj3000); //false
+
+//Object.seal(obj) verilen objeye özellik eklenmesini ve objeden özellik silinmesini engeller
+var obj4000 = {
+    first: "first"
+};
+Object.seal(obj);
+//delete obj4000.first; silmez
+
+//Object.isSealed(obj) eğer verilen obje sealed ise (Object.seal() fonksiyonundan geçtiyse) true döndürür, değilse false
+var obj5000 = {};
+Object.isSealed(obj5000); //false
+
+Object.seal(obj5000);
+Object.isSealed(obj5000); //true
+
+//Object.freeze(obj) verilen obje üzerinde yapılacak her değişikliği engeller
+var obj6000 = {
+    first: "first"
+};
+Object.freeze(obj6000);
+//obj6000.first = "sa"; değiştirmez
+
+//Object.isFrozen(obj) verilen obje frozen ise (Object.freeze() fonksiyonundan geçtiyse) true döndürür, değilse false
+var obj7000 = {
+    first: "first"
+};
+Object.isFrozen(obj7000); //false
+
+Object.freeze(obj7000);
+Object.isFrozen(obj7000); //true
