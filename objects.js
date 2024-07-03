@@ -161,6 +161,42 @@ Object.defineProperties(obj200, {
 });
 obj200; //first: "first", second: "second"
 
+//Object.getOwnPropertyDescriptor(obj, prop) verilen objedeki belirli bir özelliğin descriptor'ünü elde etmek için kullanılır
+var obj300 = {
+    first: "first"
+};
+Object.getOwnPropertyDescriptor(obj300, "first");
+// value: "first", writable: true, enumerable: true, configurable: true
 
+//Object.getOwnPropertyDescriptors(obj) verilen objedeki bütün özelliklerin descriptor'lerini döndürür
+var obj400 = {
+    first: "first",
+    second: "second"
+};
+Object.getOwnPropertyDescriptors(obj400);
+/*
+ * {
+ *      first: 
+ *      {
+ *          value: "first", writable: true, enumerable: true, configurable: true
+ *      },
+ *      second:
+ *      {
+ *          value: "second", writable: true, enumerable: true, configurable: true
+ *      }
+ * }
+ * 
+ */
 
+//Object.getOwnPropertyNames(obj) objenin özelliklerinin isimlerini array olarak döndürür
+var obj500 = {
+    first: "first",
+    second: "second"
+};
+Object.getOwnPropertyNames(obj500);
+// first, second
 
+//Object.getPrototypeOf(obj) verilen objenini prototipini döndürür
+var obj1000 = {};
+Object.getPrototypeOf(obj1000);
+// {...}
