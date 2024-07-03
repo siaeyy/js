@@ -62,6 +62,54 @@ object1.foo = function()
 
 
 /*
+ * __proto__ ve prototype:
+ * 
+ * __proto__:
+ * objenin miras aldığı prototipi işaret eder
+ * .__proto__ şeklinde erişmek kullanımdan kaldırılmıştır, Object.getPrototypeOf(obj) şeklinde kullanılmalıdır
+ * 
+ * prototype:
+ * object constructor'ların prototipini işaret eder
+ * 
+ */
+function objConstructor()
+{
+    this.variable = "variable";
+}
+var obj0 = new objConstructor();
+
+Object.getPrototypeOf(obj0) == objConstructor.prototype; //true
+
+
+
+/*
+ * Object set ve get:
+ *
+ * set:
+ * = operatöründen değeri alır ve işler
+ * 
+ * get: 
+ * değişken gibi alındığında döndürülücek değeri belirler
+ * 
+ */
+const obj01 = {
+    value,
+    set setf(v)
+    {
+        this.value = v;
+    },
+    get getf()
+    {
+        return this.value;
+    }
+}
+
+obj01.setf = "deneme";
+obj01.getf; //deneme
+
+
+
+/*
  * General Object Methods:
  * 
  * Object.assign()
