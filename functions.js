@@ -15,5 +15,3 @@ function run(func)
     func();
 }
 //sa
-
-s;
