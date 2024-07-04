@@ -66,9 +66,26 @@ globalVarible = 1;
 
 /*
  * Closure:
- * Fonksiyon içerisinde (function scope) dışarıdaki değişkenlere erişmemizi sağlayan yapı
- * 
- * Temel olarak fonksiyonu çevreleyen kapsamların ve fonksiyon kapsamının birleşimi
- * (Yanlış olabilir ama işlevi bu)
+ * Fonksiyon döndüren bir fonksiyon yapısıyla veri gizliliği ve parametrelere göre fonksiyon üretme işlemleri için kullanılabilir
  * 
  */
+
+function messageParent()
+{
+    let message = "";
+    return {
+        setMsg: function(msg)
+        {
+            msg = message;
+        },
+        getMsg: function()
+        {
+            return message;
+        }
+    }
+}
+
+const messageChild = messageParent();
+
+messageChild.setMsg("sa");
+messageChild.getMsg(); //sa
