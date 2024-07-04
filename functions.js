@@ -14,4 +14,18 @@ function run(func)
 {
     func();
 }
-//sa
+
+
+
+/*
+ * arguments nesnesi:
+ * 
+ * fonksiyonlar bu nesneyi içerir, çağırıldıklarında girilen parametreler bu nesne üzerinden erişilebilir
+ * 
+ */
+function foo2()
+{
+    console.log(arguments); 
+}
+
+foo2(1, 2, 3, 4, 5); //Arguments { 0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
