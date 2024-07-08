@@ -1,0 +1,21 @@
+Array:
+-fill()
+-of()
+
+Promise:
+-all()
+-allSettled()
+-any()
+-catch()
+-finally()
+-race()
+-reject()
+-resolve()
+-then()
+
+String:
+-localeCompare()
+-toLocaleLowerCase()
+-toLocaleUpperCase()
+
+Typed Array
