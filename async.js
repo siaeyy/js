@@ -161,5 +161,35 @@ Promise.any([myPromise5, myPromise6]).then((x) => {
 });
 //5
 
-//.finally(func) .then() methodundan farklı olarak fuldilled ve rejected durumlar için farklı geri aramalar sağlamak yerine
+//.finally(func) .then() methodundan farklı olarak fulfilled ve rejected durumlar için farklı geri aramalar sağlamak yerine
 //her iki durum içinde tek geri arama kullanır
+const myPromise7 = new Promise(function(resolve, reject){
+    resolve("7");
+});
+
+const myPromise8 = new Promise(function(resolve, reject){
+    reject("8");
+});
+
+myPromise7.finally(() => {
+    console.log("sa");
+});
+//sa
+myPromise8.finally(() => {
+    console.log("as");
+});
+//as
+
+//.race(promiseArr) verilen promise objelerinden ilk tamamlananı döndürür
+const myPromise9 = new Promise(function(resolve, reject){
+    setTimeout(resolve, "9", 100);
+});
+
+const myPromise10 = new Promise(function(resolve, reject){
+    setTimeout(resolve, "10", 200);
+});
+
+Promise.race([myPromise9, myPromise10]).then((x) => {
+    console.log(x);
+});
+//9
