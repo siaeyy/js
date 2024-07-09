@@ -208,3 +208,31 @@ text.startsWith("girin") //true
 
 var text2 = `Text değişkeninin değeri: ${text}` //Text değişkeninin değeri: metin girin
 
+
+
+/*
+ * String local işlemler:
+ * Tarayıcının diline göre gerçekleştirilen işlemlerdir
+ * 
+ * .localCompare():
+ * bir string'i başka bir string ile tarayıcı diline göre alfabetik olarak sıralarını karşılaştırır
+ * dönüş değerleri:
+ * 1: eğer verilen string method uygulanan string'den önce geliyorsa
+ * 0: sıraları eşitse
+ * -1: sonra geliyorsa
+ * 
+ * .toLocalLowerCase():
+ * tarayıcı diline göre string'i küçük harfli hale getirir
+ * 
+ * .toLocalUpperCase():
+ * tarayıcı diline göre string'i büyük harfli hale getirir
+ *
+ */
+var text3 = "ab";
+var text4 = "cd";
+text3.localeCompare(text4); //-1
+
+var text5 = "i";
+var tex6 = "I";
+text5.toLocaleUpperCase(); //i
+text6.toLocaleLowerCase(); //ı
