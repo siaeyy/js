@@ -394,3 +394,12 @@ arr110.with(3, 0); //1,2,3,0
 const arr120 = ['a', 'b', 'c'];
 const arr130 = [...arr20]; //['a','b','c'] olur [['a','b','c']] değil
 
+
+
+//.fill(value) array'in elemanları verilen değerle değiştirir
+const arr140 = ['a', 'b', 'c'];
+arr140.fill("sa"); //sa, sa, sa
+
+//Array.of(el1, el2... eln) verilen değerlerle yeni bir array oluşturup döndürür
+const arr150 = Array.of("el1", "el2", "el3");
+arr150; //el1, el2, el3
